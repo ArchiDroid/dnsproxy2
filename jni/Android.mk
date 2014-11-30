@@ -40,7 +40,10 @@ LOCAL_SRC_FILES	:= dnsproxy2.cpp \
 	nameser/ns_samedomain.c \
 	nameser/ns_ttl.c
 
-LOCAL_CFLAGS	:= -DHAVE_SYS_UIO_H \
+LOCAL_CPPFLAGS += -O3 -march=armv7-a -mfpu=neon -mfloat-abi=softfp -fmodulo-sched -fmodulo-sched-allow-regmoves -funsafe-loop-optimizations -fivopts -ftree-loop-im -ftree-loop-ivcanon -ffunction-sections -fdata-sections -funswitch-loops -frename-registers -frerun-cse-after-loop -fomit-frame-pointer -fgcse-after-reload -fgcse-sm -fgcse-las -fweb -ftracer -fvisibility=hidden -s -DNDEBUG -D__ANDROID__ --sysroot=/root/ndkTC/sysroot -Wl,-O1 -Wl,--as-needed -Wl,--relax -Wl,--sort-common -Wl,--gc-sections
+
+LOCAL_CFLAGS	:= -O3 -march=armv7-a -mfpu=neon -mfloat-abi=softfp -fmodulo-sched -fmodulo-sched-allow-regmoves -funsafe-loop-optimizations -fivopts -ftree-loop-im -ftree-loop-ivcanon -ffunction-sections -fdata-sections -funswitch-loops -frename-registers -frerun-cse-after-loop -fomit-frame-pointer -fgcse-after-reload -fgcse-sm -fgcse-las -fweb -ftracer -fvisibility=hidden -s -DNDEBUG -D__ANDROID__ --sysroot=/root/ndkTC/sysroot -Wl,-O1 -Wl,--as-needed -Wl,--relax -Wl,--sort-common -Wl,--gc-sections \
+	-DHAVE_SYS_UIO_H \
 	-DANDROID_SMP=1 \
 	-DANDROID_CHANGES \
 	-D_LIBC \
